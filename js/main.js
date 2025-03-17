@@ -5,26 +5,7 @@ let filtered = false;
 
 const url = "https://pokeapi.co/api/v2/";
 
-const allTypes = [
-    "steel",
-    "water",
-    "dragon",
-    "eletric",
-    "fairy",
-    "ghost",
-    "fire",
-    "ice",
-    "bug",
-    "fighting",
-    "normal",
-    "rock",
-    "grass",
-    "psychic",
-    "dark",
-    "ground",
-    "poison",
-    "flying",
-];
+const allTypes = ['steel', 'water', 'dragon', 'electric', 'fairy', 'ghost', 'fire', 'ice', 'bug', 'fighting', 'normal', 'rock', 'grass', 'psychic', 'dark', 'ground', 'poison', 'flying'];
 
 const todosTipos = [
     { nome: "Aço", cor: "rgba(170, 170, 187, 0.75)"},
@@ -64,7 +45,7 @@ async function getPokemon(resource) {
             return null;
         }
         return await response.json();
-    }   catch(error) {
+    } catch (error) {
         console.error(error.message);
     }
 }

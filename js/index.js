@@ -24,7 +24,7 @@ async function loadPokemons() {
                   pokemon.sprites.other["official-artwork"].front_default
                  }" alt ="${pokemon.name}" class="card-img-top">
                  <div class="card-body text-white">
-                      <h5 class="card-text mb-1">N° ${pokemon.id
+                      <h5 class="card-text mb-1">Nº ${pokemon.id
                           .toString()
                           .padStart(3, "0")}</h5>
                       <h3 class="card-title">${capitalizeFirstLetter(
@@ -38,7 +38,7 @@ async function loadPokemons() {
               </a>
           </div>`;
   }
-  loading = false;
+  loading = false
   filtered = false;
 }
 

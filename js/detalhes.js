@@ -47,57 +47,38 @@ async function drawPokemon(id) {
             onclick="document.getElementById('legacy').play()"></i><audio controls id='legacy' hidden>
             <source src="${pokemon.cries.legacy}" type="audio/ogg"></audio>`;
 
-const yValues = [];
-pokemon.stats.forEach((value, index) => {
-    yValues.push(value.base_stat);
-});
+    const yValues = [];
+    pokemon.stats.forEach((value, index) => {
+        yValues.push(value.base_stat)
+    })
 
-document.querySelector("#chartReport").innerHTML =
-    '<canvas id="myChart"></canvas>';
+    document.querySelector("#chartReport").innerHTML = '<canvas id="myChart"></canvas>';
 
-const xValues = [
-    "HP",
-    "Ataque",
-    "Defesa",
-    "Ataque Especial",
-    "Defesa Especial",
-    "Velocidade",
-];
-const barColors = [
-    "#FE0000",
-    "#EE7F30",
-    "#F7D02C",
-    "#F85687",
-    "#77C755",
-    "#678FEE",
-];
+    const xValues = ["HP", "Ataque", "Defesa", "Ataque Especial", "Defesa Especial", "Velocidade"];
+    const barColors = ["#FE0000", "#EE7F30", "#F7D02C", "#F85687", "#77C755", "#678FEE"];
     new Chart("myChart", {
         type: "bar",
         data: {
             labels: xValues,
-            datasets: [
-                {
-                    backgroundColor: barColors,
-                    data: yValues,
-                },
-            ],
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
         },
         options: {
             legend: { display: false },
             title: {
                 display: true,
-                text: "Status",
+                text: "Status"
             },
             scales: {
-                yAxes: [
-                    {
-                        ticks: {
-                            beginAtZero: true,
-                        },
-                    },
-                ],
-            },
-        },
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
     });
 }
 
